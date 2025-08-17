@@ -258,4 +258,4 @@ weighted_average = numerator / denominator
 print(weighted_average)
 
 #This gives a diffusion constant of 8.426*10^-10 (m^2/s)
-#The theoretically predicted value is 3.028*10^-11 (m^2/s), not bad!
+#The theoretically predicted value is 3.028*10^-11 (m^2/s)
