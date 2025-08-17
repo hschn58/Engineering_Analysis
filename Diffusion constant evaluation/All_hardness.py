@@ -233,7 +233,7 @@ weights = {
     # Add weights for all other time columns
 }
 
-#remove lowest value estimated as h_0 to not skew the result
+#remove lowest value estimated as h_0 to not skew the result (quasi-median type approach to hedge against outliers)
 pivot_df.at[13,'500']=0
 
 df_nonzero = pivot_df.replace(np.nan, 0)
