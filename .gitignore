@@ -16,3 +16,22 @@ dist/
 # Virtual environments
 venv/
 .env/
+
+
+#other data / files
+
+*.mov
+*.avi
+*.wav
+*.zip
+*.tar
+*.mat
+*.h5
+*.pt
+*.pth
+*.ckpt
+# local scratch
+tmp/
+
+
+
