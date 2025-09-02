@@ -8,6 +8,7 @@ power rule, exponential, polynomial, and linear curve fits.
 
 import numpy as np
 from fit_data import fit_plot
+
 def gauss_fit(dataset, plotit=False):
 
     """
