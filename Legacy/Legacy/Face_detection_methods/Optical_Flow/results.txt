@@ -1,3 +1,0 @@
-
-
-Optical flow didn't work great, all of them slid off like the last example
