@@ -34,3 +34,9 @@ conda activate eng-analysis
 
 # b. install common essentials (safe defaults for most folders)
 pip install numpy scipy matplotlib jupyter pandas
+```
+
+## License 
+
+This project is licensed under the [MIT License](./LICENSE).
+
