@@ -18,3 +18,19 @@ The pipeline has evolved from basic spectral estimation toward a more complete s
 - **Camera consistency handling**: aperture/exposure/WB checks preserve physiological variation over environmental noise  
 - **Multiple estimators**: FFT, wavelet, and Butterworth filtering for heart-rate extraction  
 - **Outputs**: BPM time series with optional confidence metric, plots for each method, and debug visuals showing ROI tracking  
+
+
+---
+
+## Full_Stack Pipeline
+
+The [`Full_Stack/`](./Full_Stack) directory contains the **culmination of the rPPG pipeline** — combining all major components into a single, reproducible workflow.  
+
+### Key additions
+- **End-to-end integration**: from video input → ROI stabilization → motion filtering → heart-rate estimation.  
+- **Unified interface**: a single driver script to run preprocessing, optical flow stabilization, motion rejection, and spectral analysis together.  
+- **Configurable parameters**: window size, overlap, frequency band, detector type, and motion thresholds adjustable in one place.  
+- **Output suite**: synchronized CSV logs, BPM plots, and debug visuals (ROI trajectories, motion metrics).  
+- **Scalability**: designed for batch processing of multiple clips with consistent settings.  
+
+This folder demonstrates how the individual methods explored earlier (optical flow, motion metrics, spectral estimators, and camera consistency checks) come together in a **complete rPPG pipeline**.
