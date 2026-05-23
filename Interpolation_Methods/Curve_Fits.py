@@ -1,12 +1,11 @@
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 """
 This Python module contains functions for Gaussian, 
 power rule, exponential, polynomial, and linear curve fits. 
 """
 
-import numpy as np
 from fit_data import fit_plot
 
 def gauss_fit(dataset, plotit=False):

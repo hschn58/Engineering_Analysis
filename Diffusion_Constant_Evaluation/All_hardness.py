@@ -34,7 +34,8 @@ Returns:
 ########################################################################################################################
 #Plot
 ########################################################################################################################
-data_file='path.xlsx'
+from pathlib import Path
+data_file=Path(__file__).parent / "data_hardness.xlsx"
 
 data=pd.read_excel(data_file)
 
@@ -130,7 +131,7 @@ plt.yticks(ticks=yrange, labels=ylabels, fontsize=8)
 plt.grid('on')
 #save/show fig
 
-plt.savefig("out_path", dpi=1200)
+plt.savefig("hardness_plot.png", dpi=1200)
 
 
 plt.show()

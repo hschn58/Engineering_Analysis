@@ -62,7 +62,6 @@ def build_stiffness_matrix(nodes, triangles):
     # Build the global matrix (sparse, in COO format then convert to CSR)
     K = sp.coo_matrix((V, (I, J)), shape=(N, N)).tocsr()
 
-    print(I, J, V)
     return K
 
 # =============================================================================

@@ -7,41 +7,46 @@ source surrounded by a cylindrical body filled with water.
 
 def finite_diff(nsys, trad):
     """
-    
-
     Parameters
     ----------
     nsys : TYPE int
         This is the number of segments used
         for the finite difference method
     trad : TYPE float
-        This is the outer tank radius 
+        This is the outer tank radius
 
     Returns
     -------
     soln : TYPE numpy array
-        This is the solution vector describing 
-        the neutron flux at every evaluation segment. 
-
+        This is the solution vector describing
+        the neutron flux at every evaluation segment.
     """
-    
+
     srad = 0.05
     d = 1/(3*(2.20+345*(1-0.324)))
-    a =2.2
-    rad_points=np.linspace(srad,trad,nsys+1)
-    h = ((trad-srad)/nsys)
+    a = 2.2
+    rad_points = np.linspace(srad, trad, nsys+1)
+    h = (trad-srad)/nsys
     matr = np.zeros((nsys, nsys))
 
-    for i in range(1,nsys):
-        matr[i,i-1]=-1*d*rad_points[i-1]/h**2           #  M_(i,i-1)
-        matr[i,i]=2*d*rad_points[i]/h**2+rad_points[i]*a        #  M_(i,i)
-        matr[i,i+1]=-1*d*rad_points[i+1]/h**2
+    # Interior rows: conservative finite difference for
+    # -1/r d/dr(r D dphi/dr) + Sigma_a phi = S
+    # using interface midpoints r_{i+1/2} and r_{i-1/2}
+    for i in range(1, nsys-1):
+        r_minus = 0.5*(rad_points[i-1] + rad_points[i])   # r_{i-1/2}
+        r_plus  = 0.5*(rad_points[i]   + rad_points[i+1]) # r_{i+1/2}
+        matr[i,i-1] = -d*r_minus/h**2
+        matr[i,i]   =  d*(r_minus + r_plus)/h**2 + rad_points[i]*a
+        matr[i,i+1] = -d*r_plus/h**2
 
-    matr[0,0]=1
-    matr[-1,-2]=(d/(2*h))*(-1)*(1/h)
-    matr[-1,-1]=(d/(2*h))*1*(1/h)
+    # Inner BC: prescribed flux at source surface (phi = 1)
+    matr[0,0] = 1
     rhs = np.zeros(nsys)
-    rhs[0]=1
+    rhs[0] = 1
+
+    # Outer BC: vacuum (zero flux at extrapolated boundary)
+    matr[-1,-1] = 1
+    rhs[-1] = 0
 
     soln = np.linalg.solve(matr, rhs)
     return soln
