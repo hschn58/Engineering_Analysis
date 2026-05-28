@@ -11,6 +11,8 @@ Downloads SRTM elevation data, fetches NAIP aerial imagery, and renders a textur
 5. **NAIP texture** -- Fetches 2023 aerial imagery from Montana's ArcGIS image service, with automatic tiling for large grids and water-mask-based column destriping
 6. **Rendering** -- 3D surface plot with satellite texture overlay and isotropic axis scaling (no vertical exaggeration)
 
+![Flathead Range 3D surface with NAIP satellite texture](Figure_1.png)
+
 ## Usage
 
 ```bash
