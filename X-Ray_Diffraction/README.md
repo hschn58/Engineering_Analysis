@@ -14,10 +14,11 @@ MATLAB analysis of an X-ray diffraction (XRD) pattern for tungsten (W), includin
 
 ## Output
 
-- `W_pattern_a0s.png` -- Lattice parameter vs cos^2(theta) with linear fit
-- `peaks.csv` -- Table of peak positions, intensities, d-spacings, lattice parameters, and error terms
+![Tungsten XRD pattern with labeled peaks](Diffraction_pattern.jpeg)
 
-![Lattice parameter extrapolation](W_pattern_a0s.png)
+![Lattice parameter vs cos^2(theta)](W_pattern_a0s.png)
+
+- `peaks.csv` -- Table of peak positions, intensities, d-spacings, lattice parameters, and error terms
 
 ## Usage
 

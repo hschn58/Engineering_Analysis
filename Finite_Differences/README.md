@@ -18,6 +18,8 @@ Solves for the displacement of a bar with spatially varying elastic modulus E(x)
 
 Coefficients a and c can be passed as command-line arguments (default to 0 for uniform properties).
 
+![Neutron flux and bar displacement solutions](finite_differences.png)
+
 ## Usage
 
 ```bash

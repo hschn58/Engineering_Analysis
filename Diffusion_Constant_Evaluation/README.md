@@ -18,6 +18,8 @@ The script:
 3. Inverts the error function at multiple depth points to estimate D for each dataset
 4. Computes a weighted average across all measurements
 
+![Hardness vs depth for all carburization times](Hardness%20Data.png)
+
 ## Result
 
 Estimated D = 8.43 x 10^-10 m^2/s (theoretical prediction: 3.03 x 10^-11 m^2/s).

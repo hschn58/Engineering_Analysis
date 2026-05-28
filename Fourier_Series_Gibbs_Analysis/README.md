@@ -8,6 +8,8 @@ The target function is a piecewise-defined sawtooth on [-pi, pi] with cubic poly
 
 Fourier coefficients (a0, an, bn) are computed numerically via the trapezoidal rule over 2000 quadrature points, and partial sums are animated up to N = 200 terms.
 
+![Fourier partial sums showing Gibbs overshoot](fourier_gibbs.png)
+
 ## Usage
 
 ```bash

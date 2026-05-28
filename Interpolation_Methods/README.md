@@ -17,6 +17,8 @@ Each function:
 - Optionally plots the data points and fitted curve (`plotit=True`)
 - Returns the fitted coefficients
 
+![Curve fitting examples](curve_fits.png)
+
 ## Files
 
 - `Curve_Fits.py` -- Full library with all four fit types plus `fit_plot`
