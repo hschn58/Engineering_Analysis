@@ -20,15 +20,20 @@ A curated set of small, focused numerical methods and applied-physics mini-proje
 
 ## Quickstart
 
-### 1) Environment
 ```bash
-# a. create a clean environment (conda or venv)
-conda create -n eng-analysis python=3.10 -y
-conda activate eng-analysis
-# or: python -m venv .venv && source .venv/bin/activate
+git clone https://github.com/hschn58/Engineering_Analysis.git
+cd Engineering_Analysis
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-# b. install common essentials (safe defaults for most folders)
-pip install numpy scipy matplotlib jupyter pandas
+This covers most subprojects. Topography has additional dependencies — see its [README](Topography/README.md). X-Ray Diffraction requires MATLAB.
+
+Then run any subproject directly:
+
+```bash
+cd Finite_Element_Method
+python FEM_Laplace_Disk.py
 ```
 
 ## License 
